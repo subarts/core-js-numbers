@@ -35,7 +35,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCircleCircumference(rad) {
-  return 2 * (3.14 * rad);
+  return 2 * 3.141592653589793 * rad;
 }
 
 /**
@@ -51,7 +51,17 @@ function getCircleCircumference(rad) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2) / 2;
+  let num = 0;
+  if (value1 === value2) {
+    return value1;
+  }
+  num = value1 + value2;
+  if (num === 0) {
+    num = 0;
+  } else {
+    num /= 2;
+  }
+  return num;
 }
 
 /**
@@ -71,8 +81,9 @@ function getAverage(value1, value2) {
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
   // d = sqrt((x2 — x1)^2 + (y2 0 y1)^2)
-
-  const len = (x2 - x1) ** 2 + (y2 - y1) ** 2;
+  const a = (x2 - x1) ** 2;
+  const b = (y2 - y1) ** 2;
+  const len = Math.sqrt(a + b);
   return len;
 }
 
@@ -92,10 +103,12 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
 function getLinearEquationRoot(a, b) {
   let num = 0;
   if (a !== 0) {
-    num = a / b;
+    num = -(b / a);
+    return num;
   }
   if (a === 0 && b !== 0) {
     num = 0;
+    return num;
   }
   return num;
 }
@@ -136,7 +149,16 @@ function getAngleBetweenVectors(/*  x1, y1, x2, y2  */) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  return value;
+  let num = 0;
+  if (value > 100) {
+    num = value % 100;
+  }
+  if (value > 10) {
+    num = value % 10;
+  } else {
+    num = value;
+  }
+  return num;
 }
 
 /**
@@ -151,7 +173,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-  return value.toString().substring(value.toString().length - 1) * 1;
+  return value * 1;
 }
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
