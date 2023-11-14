@@ -18,8 +18,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(a,b) {
+  return a*b
 }
 
 /**
@@ -33,8 +33,8 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference(rad) {
+  return 2*3.14*rad
 }
 
 /**
@@ -49,8 +49,8 @@ function getCircleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(a,b) {
+  return (a+b)/2
 }
 
 /**
@@ -68,13 +68,18 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints( x1, y1, x2, y2 ) {
+  
+  // d = sqrt((x2 — x1)^2 + (y2 0 y1)^2)
+  let len= Math.pow((Math.pow((x2-x1),2)+Math.pow((y2-y1),2)),2)
+
+  return len
 }
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
- *
+ *  
+ * a⋅x+b=0 a · x + b = 0
  * @param {number} a
  * @param {number} b
  * @return {number}
@@ -84,8 +89,13 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot( a, b ) {
+    if(a!=0){
+      return a/b}
+    if(a==0 &&b!=0){
+      return 0
+    }
+  return 
 }
 
 /**
@@ -104,6 +114,8 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,1) (0,-1)    => π
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
+ *
+ *  
  */
 function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
   throw new Error('Not implemented');
@@ -122,8 +134,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit( value ) {
+  return value
 }
 
 /**
@@ -137,8 +149,8 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString( value ) {
+ return value.toString().substring(value.toString().length-1)*1
 }
 
 /**
@@ -154,8 +166,8 @@ function parseNumberFromString(/* value */) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal( a, b, c ) {
+  return Math.sqrt(Math.pow(a,2)+Math.pow(b,2)+Math.pow(c,2))
 }
 
 /**
