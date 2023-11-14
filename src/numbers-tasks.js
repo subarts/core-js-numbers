@@ -18,8 +18,9 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(a,b) {
-  return a*b
+function getRectangleArea(width, height) {
+  const a = width * height;
+  return a;
 }
 
 /**
@@ -34,7 +35,7 @@ function getRectangleArea(a,b) {
  *   0    => 0
  */
 function getCircleCircumference(rad) {
-  return 2*3.14*rad
+  return 2 * 3.14 * rad;
 }
 
 /**
@@ -49,8 +50,8 @@ function getCircleCircumference(rad) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(a,b) {
-  return (a+b)/2
+function getAverage(a, b) {
+  return (a + b) / 2;
 }
 
 /**
@@ -68,17 +69,16 @@ function getAverage(a,b) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints( x1, y1, x2, y2 ) {
-  
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
   // d = sqrt((x2 — x1)^2 + (y2 0 y1)^2)
-  let len= Math.pow((Math.pow((x2-x1),2)+Math.pow((y2-y1),2)),2)
 
-  return len
+  const len = (x2 - x1) ** 2 + (y2 - y1) ** 2;
+  return len;
 }
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
- *  
+ *
  * a⋅x+b=0 a · x + b = 0
  * @param {number} a
  * @param {number} b
@@ -89,15 +89,16 @@ function getDistanceBetweenPoints( x1, y1, x2, y2 ) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot( a, b ) {
-    if(a!=0){
-      return a/b}
-    if(a==0 &&b!=0){
-      return 0
-    }
-  return 
+function getLinearEquationRoot(a, b) {
+  let num = 0;
+  if (a !== 0) {
+    num = a / b;
+  }
+  if (a === 0 && b !== 0) {
+    num = 0;
+  }
+  return num;
 }
-
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
  * coordinates in Cartesian plane.
@@ -115,9 +116,9 @@ function getLinearEquationRoot( a, b ) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  *
- *  
+ *
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
+function getAngleBetweenVectors(/*  x1, y1, x2, y2  */) {
   throw new Error('Not implemented');
 }
 
@@ -134,8 +135,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit( value ) {
-  return value
+function getLastDigit(value) {
+  return value;
 }
 
 /**
@@ -149,10 +150,9 @@ function getLastDigit( value ) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString( value ) {
- return value.toString().substring(value.toString().length-1)*1
+function parseNumberFromString(value) {
+  return value.toString().substring(value.toString().length - 1) * 1;
 }
-
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
  *
@@ -166,8 +166,8 @@ function parseNumberFromString( value ) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal( a, b, c ) {
-  return Math.sqrt(Math.pow(a,2)+Math.pow(b,2)+Math.pow(c,2))
+function getParallelepipedDiagonal(a, b, c) {
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 
 /**
@@ -187,7 +187,7 @@ function getParallelepipedDiagonal( a, b, c ) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
+function roundToPowerOfTen(/*  num, pow  */) {
   throw new Error('Not implemented');
 }
 
