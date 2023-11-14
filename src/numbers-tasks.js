@@ -35,7 +35,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCircleCircumference(rad) {
-  return 2 * 3.14 * rad;
+  return 2 * (3.14 * rad);
 }
 
 /**
@@ -50,8 +50,8 @@ function getCircleCircumference(rad) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(a, b) {
-  return (a + b) / 2;
+function getAverage(value1, value2) {
+  return (value1 + value2) / 2;
 }
 
 /**
