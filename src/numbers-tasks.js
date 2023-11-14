@@ -80,7 +80,6 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  // d = sqrt((x2 — x1)^2 + (y2 0 y1)^2)
   const a = (x2 - x1) ** 2;
   const b = (y2 - y1) ** 2;
   const len = Math.sqrt(a + b);
@@ -230,8 +229,17 @@ function roundToPowerOfTen(/*  num, pow  */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  let count = 0;
+  for (let i = 0; i <= n; i += 1) {
+    if (n % i === 0) {
+      count += 1;
+    }
+  }
+  if (count <= 2) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -270,8 +278,8 @@ function toNumber(value, def) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  return num ** 3;
 }
 
 /**
@@ -287,8 +295,10 @@ function getCube(/* num */) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  return index <= 1
+    ? index
+    : getFibonacciNumber(index - 1) + getFibonacciNumber(index - 2);
 }
 
 /**
@@ -302,8 +312,12 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let count = 0;
+  for (let i = 1; i <= n; i += 1) {
+    count += i;
+  }
+  return count;
 }
 
 /**
